@@ -1,2 +1,1 @@
-# azure-devops-application
-Azure DevOps Application
+# Example of Angular 7 with Azure DevOps

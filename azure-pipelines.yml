@@ -1,0 +1,24 @@
+pool:
+  vmImage: 'Ubuntu 16.04'
+
+variables:
+  buildConfiguration: 'Release'
+
+steps:
+
+- task: Npm@1
+  displayName: 'npm install'
+  inputs:
+    command: install
+    workingDir: src/angular7
+
+- task: Npm@1
+  displayName: 'Build Angular'
+  inputs:
+    command: run build -- --prod
+    workingDir: src/angular7
+
+- task: PublishPipelineArtifact@0
+  inputs:
+    artifactName: 'angular'
+    targetPath: 'src/angular7/dist'
