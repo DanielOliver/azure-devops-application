@@ -23,3 +23,17 @@ steps:
   inputs:
     artifactName: 'angular'
     targetPath: 'src/angular7/dist'
+
+- task: Npm@1
+  displayName: 'Test Angular'
+  inputs:
+    command: custom
+    customCommand: run test -- --watch=false --code-coverage
+    workingDir: src/angular7
+
+- task: PublishCodeCoverageResults@1
+  displayName: 'Publish code coverage Angular results'
+  inputs:
+    codeCoverageTool: Cobertura
+    summaryFileLocation: 'src/angular7/coverage/cobertura-coverage.xml'
+    reportDirectory: src/angular7/coverage
