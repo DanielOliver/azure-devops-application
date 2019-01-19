@@ -48,4 +48,6 @@ steps:
   inputs:
     searchFolder: src/angular7/junit
     testRunTitle: Angular
+    testResultsFormat: JUnit
+    testResultsFiles: "**/TESTS*.xml"
 
