@@ -3,6 +3,12 @@ variables:
 
 steps:
 
+- task: DeleteFiles@1
+  displayName: 'Delete JUnit files'
+  inputs:
+    SourceFolder: src/angular7/junit
+    Contents: 'TEST*.xml'
+
 - task: Npm@1
   displayName: 'npm install'
   inputs:
@@ -36,12 +42,6 @@ steps:
     summaryFileLocation: 'src/angular7/coverage/cobertura-coverage.xml'
     reportDirectory: src/angular7/coverage
     failIfCoverageEmpty: true
-
-- task: DeleteFiles@1
-  displayName: 'Delete JUnit files'
-  inputs:
-    SourceFolder: src/angular7/junit
-    Contents: 'TEST*.xml'
 
 - task: PublishTestResults@2
   displayName: 'Publish Angular test results'
