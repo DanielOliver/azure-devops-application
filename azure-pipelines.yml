@@ -15,7 +15,8 @@ steps:
 - task: Npm@1
   displayName: 'Build Angular'
   inputs:
-    command: run build -- --prod
+    command: custom
+    customCommand: run build -- --prod
     workingDir: src/angular7
 
 - task: PublishPipelineArtifact@0
