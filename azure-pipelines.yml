@@ -37,3 +37,4 @@ steps:
     codeCoverageTool: Cobertura
     summaryFileLocation: 'src/angular7/coverage/cobertura-coverage.xml'
     reportDirectory: src/angular7/coverage
+    failIfCoverageEmpty: true
