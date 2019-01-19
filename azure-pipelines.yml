@@ -46,7 +46,7 @@ steps:
 - task: PublishTestResults@2
   displayName: 'Publish Angular test results'
   inputs:
-    searchFolder: src/angular7/junit
+    searchFolder: $(System.DefaultWorkingDirectory)/src/angular7/junit
     testRunTitle: Angular
     testResultsFormat: JUnit
     testResultsFiles: "**/TESTS*.xml"
