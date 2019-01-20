@@ -27,6 +27,11 @@ steps:
     artifactName: 'angular'
     targetPath: 'src/angular7/dist'
 
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: 'src/angular7/dist'
+    ArtifactName: angular2
+
 - task: Npm@1
   displayName: 'Test Angular'
   inputs:
