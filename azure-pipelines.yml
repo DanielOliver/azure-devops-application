@@ -1,8 +1,12 @@
 variables:
   buildConfiguration: 'Release'
 
-steps:
+trigger:
+  paths:
+    include:
+    - src/angular7/*
 
+steps:
 - task: DeleteFiles@1
   displayName: 'Delete JUnit files'
   inputs:
