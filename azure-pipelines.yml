@@ -63,3 +63,19 @@ steps:
     command: custom
     customCommand: run lint --  --format=stylish
     workingDir: src/angular7
+
+- task: Npm@1
+  displayName: 'E2E Test Angular'
+  inputs:
+    command: custom
+    customCommand: run e2e
+    workingDir: src/angular7
+
+- task: PublishTestResults@2
+  displayName: 'Publish Angular test results'
+  condition: succeededOrFailed()
+  inputs:
+    searchFolder: $(System.DefaultWorkingDirectory)/src/angular7/e2e/junit
+    testRunTitle: Angular_E2E
+    testResultsFormat: JUnit
+    testResultsFiles: "**/junit*.xml"
