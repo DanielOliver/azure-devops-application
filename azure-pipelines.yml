@@ -72,7 +72,7 @@ steps:
     workingDir: src/angular7
 
 - task: PublishTestResults@2
-  displayName: 'Publish Angular test results'
+  displayName: 'Publish Angular E2E test results'
   condition: succeededOrFailed()
   inputs:
     searchFolder: $(System.DefaultWorkingDirectory)/src/angular7/e2e/junit
