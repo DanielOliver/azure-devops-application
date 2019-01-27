@@ -61,5 +61,5 @@ steps:
   displayName: 'Lint Angular'
   inputs:
     command: custom
-    customCommand: run lint --  --format stylish
+    customCommand: run lint --  --format=stylish
     workingDir: src/angular7
