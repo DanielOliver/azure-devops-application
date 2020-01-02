@@ -5,9 +5,10 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "test": "ng test",
+    "install-puppeteer": "cd node_modules/puppeteer && npm run install",
+    "test": "npm run install-puppeteer && ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "npm run install-puppeteer && ng e2e"
   },
   "private": true,
   "dependencies": {
