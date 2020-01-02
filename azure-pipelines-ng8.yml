@@ -63,14 +63,14 @@ steps:
   inputs:
     codeCoverageTool: Cobertura
     summaryFileLocation: 'coverage/cobertura-coverage.xml'
-    reportDirectory: src/angular8/coverage
+    reportDirectory: src
     failIfCoverageEmpty: true
 
 - task: PublishTestResults@2
   displayName: 'Publish Angular test results'
   condition: succeededOrFailed()
   inputs:
-    searchFolder: $(System.DefaultWorkingDirectory)/junit
+    searchFolder: $(System.DefaultWorkingDirectory)/src/junit
     testRunTitle: Angular
     testResultsFormat: JUnit
     testResultsFiles: "**/TESTS*.xml"
