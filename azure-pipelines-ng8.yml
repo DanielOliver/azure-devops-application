@@ -63,7 +63,7 @@ steps:
   inputs:
     codeCoverageTool: Cobertura
     summaryFileLocation: 'src/coverage/cobertura-coverage.xml'
-      reportDirectory: src/coverage
+    reportDirectory: src/coverage
     failIfCoverageEmpty: true
 
 - task: PublishTestResults@2
