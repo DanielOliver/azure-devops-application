@@ -62,8 +62,8 @@ steps:
   condition: succeededOrFailed()
   inputs:
     codeCoverageTool: Cobertura
-    summaryFileLocation: 'coverage/cobertura-coverage.xml'
-    reportDirectory: src
+    summaryFileLocation: 'src/coverage/cobertura-coverage.xml'
+      reportDirectory: src/coverage
     failIfCoverageEmpty: true
 
 - task: PublishTestResults@2
